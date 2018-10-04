@@ -1,0 +1,8 @@
+<xs:element name="Quantity">
+<xs:simpletype>
+<xs:restriction base = "xs:integer">
+<xs:minInclusive value ="0"/>
+<xs:maxInclusive value = "500"/>
+</xs:restriction>
+</xs:simpletype>
+</xs:element>

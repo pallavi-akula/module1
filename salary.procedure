@@ -1,0 +1,9 @@
+create procedure proposal(pno number)
+as
+vsal number;
+begin
+select salary into vsal from emp8 where eno=pno;
+vsal=vsal + vsal *.10;
+update emp8 set salary=vsal where eno=pno;
+end;
+/
