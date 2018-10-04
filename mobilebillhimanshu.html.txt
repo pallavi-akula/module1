@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Mobile Bill Calculation</title>
+<script>
+document.write("<H1>Mobile Bill Calculation</H1>");
+function cal()
+{
+        
+	var a=parseInt(document.getElementById("num").value);
+	var cost;
+        
+if(a<=100)
+{
+cost=a*2;
+}
+else
+{
+cost=(100*2)+((a-100)*3);
+}
+alert("Bill: " + cost);
+}
+</script>
+</head>
+
+
+<body>
+<form >
+<table>
+
+<tr>
+  <td>Mobile</td>
+  <td><input type="text" name="Mobile Number:" Pattern="[0-9]{10}" title="enter 10-digit mobile number"/></td>  
+  <td><span></span></td>  
+ </tr>
+
+<tr>
+  <td>Name</td>
+  <td><input type="text" id="un" name="Name" required/><span>*</span></td>  
+  <td><span id="ne"></span></td>  
+ </tr>
+
+ <tr>
+  <td>Email</td>
+  <td><input type="email" id="eml" name="Email" required/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+
+ <tr>
+  <td>Number of calls</td>
+  <td><input type="text" id="num" Pattern="[0-9]{0,}"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+
+<!--
+ <tr>
+  <td>Bill</td>
+  <td><input type="text" id="cost"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+-->
+
+<tr>
+   <td colspan="3"><input type="button" value="Calculate" onclick="cal()" /></td>
+</tr>
+
+
+</table>
+</form>
+</body>
+</html>

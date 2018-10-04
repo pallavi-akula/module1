@@ -1,0 +1,45 @@
+<html>
+  <head>
+<center>
+<tr>
+<table border=1 />
+<center>
+<td>
+<form>
+Name      :<input type="text" maxlength="32" name="first_name" pattern="[A-Za-z]{1,32}" placeholder="name" required>
+</form>    
+<form>
+email     :<input type="email" placeholder="Enter your email" required>
+</form>
+<form>
+PhoneNo   :<input type="number" pattern="[1-9]{1}[0-9]{9}" placeholder="enter phone no" required>
+</form> 
+<title>Add program</title>
+<script language="javascript">
+                function addNumbers()
+                {
+                        var val1 = parseInt(document.getElementById("value1").value);
+                        var cost;
+		if(val1 <= 100) {
+                        cost = val1*2;
+                }
+		else if (val1 >100){
+		cost = ((100*2) + (val1-100)*3)
+		}
+		{
+		alert("bill:" + cost)
+		}
+		}	
+        </script>
+  </head>
+  <body>
+<tr>
+<td>
+No of calls  :<input type="text" id="value1" name="value1" value=""/><br/>
+<input type="button" name="Sumbit" value="Get bill" onclick="javascript:addNumbers()"/><br/>
+</td>
+</tr>  
+</td>
+</tr>
+</body>
+</html>

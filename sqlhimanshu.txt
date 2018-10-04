@@ -1,0 +1,40 @@
+1- create sequence billno start with 201 increment by 1 minvalue 201 maxvalue 500 cycle;
+	insert into mobile_Bill values(billno.nextval,1002,null,'26-aug-2018');
+	insert into mobile_Bill values(billno.nextval,1002,null,'26-aug-2018');
+
+
+2- selectmax(noofcalls) from customer;
+
+3- select customer_no,count(*) from mobile_bill  group by customer_no having count(*)>1;
+
+4-select customer_name from customer c join mobile_Bill b on c.customer_no=b.customer_no where to_number(to_char(b.billpaiddate,'DD'))>=15;
+
+
+
+
+
+Procedure:
+
+Create procedure proname(pcustomerno number)
+customerNotFoundException exception
+
+.........
+
+
+select noofcalls into vnoofcalls from mobilebill where customerno=pcustomerno;
+
+if(condition)
+	raise customernoyfoundexception
+
+calculate bill(vbillamount)
+
+insert into mobile_bill values(seq
+value,pcustomerno,vbillamount,pbilldate)
+
+using sequence
+
+exec proname(101,'1-Oct-2018')
+
+begin
+	exec proname(101,'1-Oct-2018')
+end;

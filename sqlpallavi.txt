@@ -1,0 +1,18 @@
+
+1)create table mobile_customer(customerno number(8) primary key,customername varchar2(20) not null,emailid varchar2(35),noofcalls number);
+
+create table mobile_bill(billno number primary key,customerno number references mobile_customer(customerno),billamount number,billpaiddate date);
+
+
+2)select customerno,customername,noofcalls from mobile_customer where noofcalls=(select max(noofcalls) from mobile_customer)
+
+3) select customerno,count(*) from mobile_bill group by customerno having count(*) > 1
+/
+
+select mobile_customer.customername,mobile_bill.customerno from mobile_customer 
+inner join mobile_bill on mobile_customer.customerno = mobile_bill.customerno 
+group by mobile_bill.customerno,customername 
+having count(*)>1
+/
+
+4)select * from mobile_bill where to_char(billpaiddate,'dd')>15;
